@@ -12,22 +12,22 @@
 </head>
 <body>
 <div class="center">
-<?php if (!empty($choice)): ?>
-    <b>Your Choice : <?= $choice ?></b><br>
-    <b>Pc Choice : <?= $pcChoice ?></b><br>
-    <b><?php if ($value == 1): ?>
-        You win!
-    <?php elseif ($value == 2): ?>
-        Pc win!
-    <?php else: ?>
-        Its a draw!
-        </b>
-    <?php endif ?>
-<?php endif; ?>
-<br>
-<form action="../../index.php" method="post">
-    <button name="again" type="submit">Play Again?</button>
-</form>
+    <?php if (!empty($choice)): ?>
+        <b>Your Choice : <?= $choice ?></b><br>
+        <b>Pc Choice : <?= $pcChoice ?></b><br>
+        <b><?php if ($value == 1): ?>
+            You win!
+        <?php elseif ($value == 2): ?>
+            Pc win!
+        <?php else: ?>
+            Its a draw!
+            </b>
+        <?php endif ?>
+    <?php endif; ?>
+    <br>
+    <form action="../../index.php" method="post">
+        <button name="again" type="submit">Play Again?</button>
+    </form>
 </div>
 </body>
 </html>

@@ -15,12 +15,13 @@ class Computer implements RpsPlayer
 
     public function __construct()
     {
-        $this->weapons = new WeaponsCollection([new Paper(),new Rock(),new Scissors()]);
+        $this->weapons = new WeaponsCollection([new Paper(), new Rock(), new Scissors()]);
         $this->setPcChoiceArray();
     }
+
     public function setPcChoiceArray(): void
     {
-        foreach ($this->weapons->getWeaponsArray() as $weapon){
+        foreach ($this->weapons->getWeaponsArray() as $weapon) {
             $this->pcChoiceArray[] = $weapon->getName();
         }
     }
