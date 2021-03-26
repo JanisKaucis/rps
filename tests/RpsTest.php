@@ -5,16 +5,21 @@ namespace Tests;
 use App\Game;
 use App\Human;
 use App\Computer;
-use App\Models\ValidOptionsArray;
+use App\Models\Paper;
+use App\Models\Rock;
+use App\Models\Scissors;
+use App\Models\WeaponsCollection;
 use PHPUnit\Framework\TestCase;
 
 class RpsTest extends TestCase
 {
     public function testArrayValues(): void
     {
-        $optionsArray = new ValidOptionsArray();
-        $optionsArray->setValidOptions();
-        $this->assertEquals(['Rock', 'Paper', 'Scissors'], $optionsArray->getValidOptions());
+        $weapons = new WeaponsCollection([new Paper('Paper'),new Rock('Rock'),new Scissors('Scissors')]);
+        foreach ($weapons->getWeaponsArray() as $weapon){
+            $this->assertContains($weapon->getName(),['Rock', 'Paper', 'Scissors']);
+        }
+
     }
 
     public function testWinner(): void

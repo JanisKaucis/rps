@@ -2,19 +2,27 @@
 
 namespace App;
 
-use App\Models\ValidOptionsArray;
+use App\Models\Paper;
+use App\Models\Rock;
+use App\Models\Scissors;
+use App\Models\WeaponsCollection;
 
 class Computer implements RpsPlayer
 {
-    private object $option;
-    private array $pcChoiceArray;
+    private object $weapons;
+    private array $pcChoiceArray = [];
     private string $pcChoice;
 
     public function __construct()
     {
-        $this->option = new ValidOptionsArray();
-        $this->option->setValidOptions();
-        $this->pcChoiceArray = $this->option->getValidOptions();
+        $this->weapons = new WeaponsCollection([new Paper('Paper'),new Rock('Rock'),new Scissors('Scissors')]);
+        $this->setPcChoiceArray();
+    }
+    public function setPcChoiceArray(): void
+    {
+        foreach ($this->weapons->getWeaponsArray() as $weapon){
+            $this->pcChoiceArray[] = $weapon->getName();
+        }
     }
 
     public function setChoice(): void
