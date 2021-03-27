@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use App\Human;
+use App\Players\Human;
 use PHPUnit\Framework\TestCase;
 
 class TestHuman extends TestCase

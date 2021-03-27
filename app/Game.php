@@ -5,12 +5,15 @@ namespace App;
 use App\Models\Paper;
 use App\Models\Rock;
 use App\Models\Scissors;
+use App\Models\WeaponsCollection;
+use App\Players\Human;
+use App\Players\Computer;
 
 class Game
 {
     private string $choice;
     private string $pcChoice;
-    private int $winner;
+    private string $winner;
 
     public function setGame(): void
     {
@@ -19,23 +22,16 @@ class Game
 
     public function getWinner(Human $human, Computer $computer): void
     {
-        $paper = new Paper();
-        $rock = new Rock();
-        $scissors = new Scissors();
+        $weaponCollection = new WeaponsCollection([new Paper(), new Rock(), new Scissors()]);
         $human->setChoice();
         $this->choice = $human->getChoice();
         $computer->setChoice();
         $this->pcChoice = $computer->getChoice();
-        if (($this->choice === $rock->getName() && $this->pcChoice === $scissors->getName()) ||
-            ($this->choice === $paper->getName() && $this->pcChoice === $rock->getName()) ||
-            ($this->choice === $scissors->getName() && $this->pcChoice === $paper->getName())) {
-            $this->winner = 1;
-        } elseif ($this->choice === $this->pcChoice) {
-            $this->winner = 3;
-        } else {
-            $this->winner = 2;
+        foreach ($weaponCollection->getWeaponsArray() as $weapon){
+            if ($weapon->getName() === $this->choice){
+                $this->winner = $weapon->isWinning($this->pcChoice);
+            }
         }
-
     }
 
     public function showWinner(): void

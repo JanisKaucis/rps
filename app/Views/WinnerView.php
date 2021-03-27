@@ -15,9 +15,9 @@
     <?php if (!empty($choice)): ?>
         <b>Your Choice : <?= $choice ?></b><br>
         <b>Pc Choice : <?= $pcChoice ?></b><br>
-        <b><?php if ($value == 1): ?>
+        <b><?php if ($value == 'win'): ?>
             You win!
-        <?php elseif ($value == 2): ?>
+        <?php elseif ($value == 'lose'): ?>
             Pc win!
         <?php else: ?>
             Its a draw!

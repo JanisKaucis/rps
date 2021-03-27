@@ -1,8 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
 
-use App\Human;
-use App\Computer;
+use App\Players\Human;
+use App\Players\Computer;
 use App\Game;
 
 $game = new Game();

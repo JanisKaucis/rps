@@ -10,4 +10,16 @@ class Paper implements Weapon
     {
         return self::PAPER;
     }
+
+    public function isWinning($opponent): string
+    {
+
+      if ($opponent === 'Paper'){
+          return 'win';
+      }elseif ($opponent === 'Rock'){
+          return 'lose';
+      }else{
+          return 'tie';
+      }
+    }
 }

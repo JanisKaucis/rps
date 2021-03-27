@@ -3,8 +3,8 @@
 namespace Tests;
 
 use App\Game;
-use App\Human;
-use App\Computer;
+use App\Players\Human;
+use App\Players\Computer;
 use PHPUnit\Framework\TestCase;
 
 class TestWinner extends TestCase

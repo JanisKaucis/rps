@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Players;
 
 use App\Models\Paper;
 use App\Models\Rock;

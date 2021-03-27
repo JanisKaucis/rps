@@ -10,4 +10,14 @@ class Scissors implements Weapon
     {
         return self::SCISSORS;
     }
+    public function isWinning($opponent): string
+    {
+        if ($opponent === 'Scissors'){
+            return 'win';
+        }elseif ($opponent === 'Paper'){
+            return 'lose';
+        }else{
+            return 'tie';
+        }
+    }
 }
