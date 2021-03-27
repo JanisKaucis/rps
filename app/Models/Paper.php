@@ -15,11 +15,11 @@ class Paper implements Weapon
     {
 
       if ($opponent === 'Paper'){
-          return 'win';
-      }elseif ($opponent === 'Rock'){
-          return 'lose';
-      }else{
           return 'tie';
+      }elseif ($opponent === 'Rock'){
+          return 'win';
+      }else{
+          return 'lose';
       }
     }
 }

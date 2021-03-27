@@ -13,11 +13,11 @@ class Rock implements Weapon
     public function isWinning($opponent): string
     {
         if ($opponent === 'Rock'){
-            return 'win';
-        }elseif ($opponent === 'Scissors'){
-            return 'lose';
-        }else{
             return 'tie';
+        }elseif ($opponent === 'Scissors'){
+            return 'win';
+        }else{
+            return 'lose';
         }
     }
 }

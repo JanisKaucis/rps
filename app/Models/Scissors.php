@@ -13,11 +13,11 @@ class Scissors implements Weapon
     public function isWinning($opponent): string
     {
         if ($opponent === 'Scissors'){
-            return 'win';
-        }elseif ($opponent === 'Paper'){
-            return 'lose';
-        }else{
             return 'tie';
+        }elseif ($opponent === 'Paper'){
+            return 'win';
+        }else{
+            return 'lose';
         }
     }
 }
